@@ -17,11 +17,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="2.1.0-rc1-final" />
-    <PackageReference Include="Ocelot" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\OcelotConsul.ApiGateway.Core\OcelotConsul.ApiGateway.Core.csproj" />
+    <ProjectReference Include="..\Ocelot\Ocelot.csproj" />
   </ItemGroup>
 
 </Project>

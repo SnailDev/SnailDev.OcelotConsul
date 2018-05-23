@@ -33,7 +33,7 @@ namespace OcelotConsul.ApiGateway
                 conbuilder.AddJsonFile("appsettings.json");
                 conbuilder.AddJsonFile("configuration.json");
             })
-            .UseContentRoot(Directory.GetCurrentDirectory())
+            .UseContentRoot(Directory.GetCurrentDirectory() + @"\bin\debug\netcoreapp2.0")
             .UseKestrel()
             .UseUrls("http://*:5000")
             .UseStartup<Startup>()
