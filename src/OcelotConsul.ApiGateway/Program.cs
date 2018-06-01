@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using OcelotConsul.ApiGateway.Core;
+using Ocelot.Middleware;
+using Ocelot.DependencyInjection;
 
 namespace OcelotConsul.ApiGateway
 {
@@ -39,9 +41,5 @@ namespace OcelotConsul.ApiGateway
             .UseStartup<Startup>()
             .Build();
         }
-
-        //=>WebHost.CreateDefaultBuilder(args)
-        //        .UseStartup<Startup>()
-        //        .Build();
     }
 }

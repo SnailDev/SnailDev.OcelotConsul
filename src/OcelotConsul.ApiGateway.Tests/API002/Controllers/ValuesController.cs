@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API002.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/{mallid?}")]
     public class ValuesController : Controller
     {
         [HttpGet]
-        public string Get()
+        public string Get([FromRoute]long mallid)
         {
-            return $"API002:{DateTime.Now.ToString()}  { Environment.MachineName + " OS:" + Environment.OSVersion.VersionString}";
+            return $"{mallid}--->API002:{DateTime.Now.ToString()}  { Environment.MachineName + " OS:" + Environment.OSVersion.VersionString}";
         }
 
         [HttpGet("/health")]

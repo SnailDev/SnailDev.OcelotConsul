@@ -12,7 +12,7 @@
       "UpstreamPathTemplate": "/api001/values",
       "UpstreamHttpMethod": [ "Get" ],
       "ServiceName": "API001",
-      "LoadBalancer": "RoundRobin",
+      "LoadBalancerOptions": { "Type": "RoundRobin" },
       "UseServiceDiscovery": true,
       "ReRouteIsCaseSensitive": false,
       "QoSOptions": {
@@ -62,7 +62,7 @@
           "Port": 5002
         }
       ],
-      "UpstreamPathTemplate": "/API002/values",
+      "UpstreamPathTemplate": "/api002/values",
       "UpstreamHttpMethod": [ "Get" ],
       "QoSOptions": {
         "ExceptionsAllowedBeforeBreaking": 3,
@@ -70,7 +70,7 @@
         "TimeoutValue": 5000
       },
       "ServiceName": "API002",
-      "LoadBalancer": "RoundRobin",
+      "LoadBalancerOptions": { "Type": "RoundRobin" },
       "UseServiceDiscovery": true,
       "HttpHandlerOptions": {
         "AllowAutoRedirect": false,
@@ -80,7 +80,7 @@
   ],
   "GlobalConfiguration": {
     "ServiceDiscoveryProvider": {
-      "Host": "localhost",
+      "Host": "192.168.2.8",
       "Port": 8500
     },
     "RateLimitOptions": {

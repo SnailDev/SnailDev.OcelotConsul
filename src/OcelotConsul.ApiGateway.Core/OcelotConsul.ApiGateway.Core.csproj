@@ -11,7 +11,7 @@
     <Content Include="configuration.origin.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="configuration.json">
+    <Content Include="configuration.sample.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
