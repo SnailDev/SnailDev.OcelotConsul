@@ -26,7 +26,7 @@ namespace OcelotConsul.ApiGateway.Core
             services.AddOcelot().AddOpenTracing(option =>
             {
                 option.CollectorUrl = "http://localhost:9618";
-                option.Service = "Ocelot";
+                option.Service = "OcelotConsul.ApiGateway";
             }); ;
 
             // services.AddOcelot().AddStoreOcelotConfigurationInConsul();

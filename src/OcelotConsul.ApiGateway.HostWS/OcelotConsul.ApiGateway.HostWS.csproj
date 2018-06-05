@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Ocelot\src\Ocelot\Ocelot.csproj" />
     <ProjectReference Include="..\OcelotConsul.ApiGateway.Core\OcelotConsul.ApiGateway.Core.csproj" />
-    <ProjectReference Include="..\Ocelot\Ocelot.csproj" />
   </ItemGroup>
 
 </Project>

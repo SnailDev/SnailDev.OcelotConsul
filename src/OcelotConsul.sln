@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotConsul.ApiGateway.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotConsul.ApiGateway.HostWS", "OcelotConsul.ApiGateway.HostWS\OcelotConsul.ApiGateway.HostWS.csproj", "{E7705525-D91B-45F0-BD1C-5B825E3A511A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocelot", "Ocelot\Ocelot.csproj", "{856BFCC8-0DEB-4BCC-9C55-DD3AA4C79A45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocelot", "..\..\Ocelot\src\Ocelot\Ocelot.csproj", "{856BFCC8-0DEB-4BCC-9C55-DD3AA4C79A45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
