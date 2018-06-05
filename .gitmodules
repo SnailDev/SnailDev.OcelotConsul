@@ -1,3 +1,0 @@
-[submodule "submodules"]
-	path = ./submodules/ocelot
-	url = git@github.com:SnailDev/Ocelot.git
