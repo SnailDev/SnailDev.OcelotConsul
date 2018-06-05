@@ -1,0 +1,1 @@
+.\consul\consul.exe agent -server -datacenter=dc1 -bootstrap -data-dir ./consul/data -config-file ./consul/conf -ui -node=n1 -bind 192.168.2.8 -client=0.0.0.0

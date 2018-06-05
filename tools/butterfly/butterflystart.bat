@@ -1,0 +1,1 @@
+dotnet Butterfly.Web.dll --EnableHttpCollector=true --Storage=elasticsearch --ElasticSearchHosts=http://localhost:9200

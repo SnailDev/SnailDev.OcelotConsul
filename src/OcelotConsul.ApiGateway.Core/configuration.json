@@ -4,7 +4,7 @@
       "DownstreamPathTemplate": "/api/values",
       "UpstreamPathTemplate": "/values",
       "UpstreamHttpMethod": [
-        "Get"
+        "Get,Post"
       ],
       "AddHeadersToRequest": {},
       "AddClaimsToRequest": {},

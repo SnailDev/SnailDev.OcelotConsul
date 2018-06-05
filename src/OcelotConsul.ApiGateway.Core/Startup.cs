@@ -23,9 +23,13 @@ namespace OcelotConsul.ApiGateway.Core
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // services.AddOcelot();
+            services.AddOcelot().AddOpenTracing(option =>
+            {
+                option.CollectorUrl = "http://localhost:9618";
+                option.Service = "Ocelot";
+            }); ;
 
-            services.AddOcelot().AddStoreOcelotConfigurationInConsul();
+            // services.AddOcelot().AddStoreOcelotConfigurationInConsul();
 
             // services.AddOcelot().AddAdministration("/administration", "secret");
         }
@@ -41,7 +45,7 @@ namespace OcelotConsul.ApiGateway.Core
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseOcelot().Wait();
+            app.UseOcelot();
         }
     }
 }
