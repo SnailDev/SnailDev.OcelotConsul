@@ -13,7 +13,7 @@ namespace Client
             userClient.DefaultRequestHeaders.Add("client_id", "user");
             while (true)
             {
-                Console.WriteLine("请输入a为admin clinet,u为user client,e为退出");
+                Console.WriteLine("请输入a为admin client,u为user client,e为退出");
                 var clientKey = Console.ReadLine();
                 HttpClient client = null;
                 switch (clientKey)

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Butterfly.Client.AspNetCore;
 
 namespace API002
 {
@@ -24,6 +25,11 @@ namespace API002
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddButterfly(option =>
+            {
+                option.CollectorUrl = "http://localhost:9618";
+                option.Service = "Api002";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

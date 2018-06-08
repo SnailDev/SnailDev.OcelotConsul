@@ -23,13 +23,13 @@ namespace OcelotConsul.ApiGateway.Core
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOcelot().AddOpenTracing(option =>
-            {
-                option.CollectorUrl = "http://localhost:9618";
-                option.Service = "OcelotConsul.ApiGateway";
-            }); ;
-
-            // services.AddOcelot().AddStoreOcelotConfigurationInConsul();
+            services.AddOcelot()
+                .AddStoreOcelotConfigurationInConsul()
+                .AddOpenTracing(option =>
+                {
+                    option.CollectorUrl = Configuration["ButterflyCollectorUrl"] ?? "http://localhost:9618";
+                    option.Service = Configuration["ServiceName"]?? "OcelotConsul.ApiGateway";
+                });
 
             // services.AddOcelot().AddAdministration("/administration", "secret");
         }

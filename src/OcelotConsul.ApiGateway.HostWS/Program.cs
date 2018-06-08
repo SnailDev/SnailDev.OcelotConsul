@@ -50,6 +50,7 @@ namespace OcelotConsul.ApiGateway.HostWS
             })
             .ConfigureAppConfiguration(conbuilder =>
             {
+                conbuilder.AddCommandLine(args);
                 conbuilder.AddJsonFile("appsettings.json");
                 conbuilder.AddJsonFile("configuration.json");
             })

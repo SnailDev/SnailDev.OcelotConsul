@@ -8,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Butterfly.Client.AspNetCore;
+using System.Net.Http;
+using Butterfly.Client.Tracing;
 
 namespace API001
 {
@@ -24,6 +27,13 @@ namespace API001
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddButterfly(option =>
+            {
+                option.CollectorUrl = "http://localhost:9618";
+                option.Service = "Api001";
+            });
+
+            services.AddSingleton<HttpClient>(p => new HttpClient(p.GetService<HttpTracingHandler>()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,64 +1,10 @@
 ﻿{
-  "ReRoutes": [
-    {
-      "DownstreamPathTemplate": "/api/values",
-      "UpstreamPathTemplate": "/values",
-      "UpstreamHttpMethod": [
-        "Get,Post"
-      ],
-      "AddHeadersToRequest": {},
-      "AddClaimsToRequest": {},
-      "RouteClaimsRequirement": {},
-      "AddQueriesToRequest": {},
-      "RequestIdKey": "",
-      "FileCacheOptions": {
-        "TtlSeconds": 0,
-        "Region": ""
-      },
-      "ReRouteIsCaseSensitive": false,
-      "ServiceName": "",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5001
-        }
-      ],
-      "QoSOptions": {
-        "ExceptionsAllowedBeforeBreaking": 0,
-        "DurationOfBreak": 0,
-        "TimeoutValue": 0
-      },
-      "LoadBalancer": "",
-      "RateLimitOptions": {
-        "ClientWhitelist": [],
-        "EnableRateLimiting": false,
-        "Period": "",
-        "PeriodTimespan": 0,
-        "Limit": 0
-      },
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "",
-        "AllowedScopes": []
-      },
-      "HttpHandlerOptions": {
-        "AllowAutoRedirect": true,
-        "UseCookieContainer": true,
-        "UseTracing": true
-      },
-      "UseServiceDiscovery": false,
-      "DangerousAcceptAnyServerCertificateValidator": false
-    }
-  ],
   "GlobalConfiguration": {
+    "RequestIdKey": "ot-traceid",
     "ServiceDiscoveryProvider": {
       "Host": "192.168.2.8",
-      "Port": 8500
-    },
-    "RateLimitOptions": {
-      "ClientIdHeader": "client_id",
-      "QuotaExceededMessage": "Too Many Requests!!!",
-      "DisableRateLimitHeaders": false
+      "Port": 8500,
+      "ConfigurationKey": "Oceolot_A"
     }
   }
 }

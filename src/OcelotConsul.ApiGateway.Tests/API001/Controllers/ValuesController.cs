@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
 
 namespace API001.Controllers
 {
@@ -10,9 +11,10 @@ namespace API001.Controllers
     public class ValuesController : Controller
     {
         [HttpGet]
-        public string Get([FromRoute]long mallid)
+        public string Get([FromRoute]long mallid, [FromServices]HttpClient httpClient)
         {
-            return $"{mallid}-->API001:{DateTime.Now.ToString()}  { Environment.MachineName + " OS:" + Environment.OSVersion.VersionString}";
+            var result = httpClient.GetStringAsync("http://localhost:5000/api002/values").GetAwaiter().GetResult();
+            return $"{mallid}-->API001:{DateTime.Now.ToString()}  { Environment.MachineName + " OS:" + Environment.OSVersion.VersionString} <br />{result}";
         }
 
         [HttpGet("/health")]

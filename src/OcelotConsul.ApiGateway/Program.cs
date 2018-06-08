@@ -32,6 +32,7 @@ namespace OcelotConsul.ApiGateway
             })
             .ConfigureAppConfiguration(conbuilder =>
             {
+                conbuilder.AddCommandLine(args);
                 conbuilder.AddJsonFile("appsettings.json");
                 conbuilder.AddJsonFile("configuration.json");
             })
