@@ -11,9 +11,16 @@ namespace API001.Controllers
     public class ValuesController : Controller
     {
         [HttpGet]
-        public string Get([FromRoute]long mallid, [FromServices]HttpClient httpClient)
+        public async Task<string> Get([FromRoute]long mallid, [FromServices]HttpClient httpClient)
         {
-            var result = httpClient.GetStringAsync("http://localhost:5000/api002/values").GetAwaiter().GetResult();
+            var result = await httpClient.GetStringAsync("http://localhost:5000/api002/values");
+            return $"{mallid}-->API001:{DateTime.Now.ToString()}  { Environment.MachineName + " OS:" + Environment.OSVersion.VersionString} <br />{result}";
+        }
+
+        [HttpPost]
+        public async Task<string> Post([FromRoute]long mallid, [FromServices]HttpClient httpClient)
+        {
+            var result = await httpClient.GetStringAsync("http://localhost:5000/api002/values");
             return $"{mallid}-->API001:{DateTime.Now.ToString()}  { Environment.MachineName + " OS:" + Environment.OSVersion.VersionString} <br />{result}";
         }
 

@@ -12,7 +12,7 @@ namespace API002.Controllers
         [HttpGet]
         public string Get([FromRoute]long mallid)
         {
-            return $"{mallid}--->API002:{DateTime.Now.ToString()}  { Environment.MachineName + " OS:" + Environment.OSVersion.VersionString}";
+            return "API002";//$"{mallid}--->API002:{DateTime.Now.ToString()}  { Environment.MachineName + " OS:" + Environment.OSVersion.VersionString}";
         }
 
         [HttpGet("/health")]

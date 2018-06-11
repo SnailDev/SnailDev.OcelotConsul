@@ -19,7 +19,32 @@ namespace OcelotConsul.ApiGateway
         public static void Main(string[] args)
         {
             Console.Title = "OcelotConsul.ApiGateway";
-            BuildWebHost(args).Run();
+            // BuildWebHost(args).Run();
+
+            new WebHostBuilder()
+            .UseKestrel()
+            .UseContentRoot(Directory.GetCurrentDirectory() + @"\bin\debug\netcoreapp2.1")
+            .ConfigureAppConfiguration(conbuilder =>
+            {
+                conbuilder.AddCommandLine(args);
+                conbuilder.AddJsonFile("appsettings.json");
+                conbuilder.AddJsonFile("configuration.json");
+            })
+            .ConfigureServices(s =>
+            {
+                s.AddOcelot();
+            })
+            .ConfigureLogging((hostingContext, logging) =>
+            {
+                //add your logging
+            })
+            .UseIISIntegration()
+            .Configure(app =>
+            {
+                app.UseOcelotAsync().Wait();
+            })
+            .Build()
+            .Run();
         }
 
         public static IWebHost BuildWebHost(string[] args)
