@@ -7,119 +7,16 @@
         "Get",
         "Post"
       ],
-      "AddHeadersToRequest": {},
-      "UpstreamHeaderTransform": {},
-      "DownstreamHeaderTransform": {},
-      "AddClaimsToRequest": {},
-      "RouteClaimsRequirement": {},
-      "AddQueriesToRequest": {},
-      "RequestIdKey": null,
-      "FileCacheOptions": {
-        "TtlSeconds": 0,
-        "Region": null
-      },
       "ReRouteIsCaseSensitive": false,
       "ServiceName": "API001",
       "DownstreamScheme": "http",
-      "QoSOptions": {
-        "ExceptionsAllowedBeforeBreaking": 3,
-        "DurationOfBreak": 10,
-        "TimeoutValue": 5000
-      },
-      "LoadBalancerOptions": {
-        "Type": "RoundRobin",
-        "Key": null,
-        "Expiry": 0
-      },
-      "RateLimitOptions": {
-        "ClientWhitelist": [],
-        "EnableRateLimiting": false,
-        "Period": "5s",
-        "PeriodTimespan": 1.0,
-        "Limit": 10
-      },
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": null,
-        "AllowedScopes": []
-      },
-      "HttpHandlerOptions": {
-        "AllowAutoRedirect": false,
-        "UseCookieContainer": false,
-        "UseTracing": true
-      },
       "UseServiceDiscovery": false,
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": 5001
         }
-      ],
-      "UpstreamHost": null,
-      "Key": null,
-      "DelegatingHandlers": [],
-      "Priority": 1,
-      "Timeout": 0,
-      "DangerousAcceptAnyServerCertificateValidator": false
-    },
-    {
-      "DownstreamPathTemplate": "/notice",
-      "UpstreamPathTemplate": "/notice",
-      "UpstreamHttpMethod": [
-        "Post"
-      ],
-      "AddHeadersToRequest": {},
-      "UpstreamHeaderTransform": {},
-      "DownstreamHeaderTransform": {},
-      "AddClaimsToRequest": {},
-      "RouteClaimsRequirement": {},
-      "AddQueriesToRequest": {},
-      "RequestIdKey": null,
-      "FileCacheOptions": {
-        "TtlSeconds": 0,
-        "Region": null
-      },
-      "ReRouteIsCaseSensitive": false,
-      "ServiceName": null,
-      "DownstreamScheme": "http",
-      "QoSOptions": {
-        "ExceptionsAllowedBeforeBreaking": 3,
-        "DurationOfBreak": 10,
-        "TimeoutValue": 5000
-      },
-      "LoadBalancerOptions": {
-        "Type": null,
-        "Key": null,
-        "Expiry": 0
-      },
-      "RateLimitOptions": {
-        "ClientWhitelist": [],
-        "EnableRateLimiting": false,
-        "Period": null,
-        "PeriodTimespan": 0.0,
-        "Limit": 0
-      },
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "",
-        "AllowedScopes": []
-      },
-      "HttpHandlerOptions": {
-        "AllowAutoRedirect": false,
-        "UseCookieContainer": false,
-        "UseTracing": true
-      },
-      "UseServiceDiscovery": false,
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5001
-        }
-      ],
-      "UpstreamHost": null,
-      "Key": null,
-      "DelegatingHandlers": [],
-      "Priority": 1,
-      "Timeout": 0,
-      "DangerousAcceptAnyServerCertificateValidator": false
+      ]
     },
     {
       "DownstreamPathTemplate": "/api/values",
@@ -127,59 +24,31 @@
       "UpstreamHttpMethod": [
         "Get"
       ],
-      "AddHeadersToRequest": {},
-      "UpstreamHeaderTransform": {},
-      "DownstreamHeaderTransform": {},
-      "AddClaimsToRequest": {},
-      "RouteClaimsRequirement": {},
-      "AddQueriesToRequest": {},
-      "RequestIdKey": null,
-      "FileCacheOptions": {
-        "TtlSeconds": 0,
-        "Region": null
-      },
       "ReRouteIsCaseSensitive": false,
       "ServiceName": "API002",
       "DownstreamScheme": "http",
-      "QoSOptions": {
-        "ExceptionsAllowedBeforeBreaking": 3,
-        "DurationOfBreak": 10,
-        "TimeoutValue": 5000
-      },
-      "LoadBalancerOptions": {
-        "Type": "RoundRobin",
-        "Key": null,
-        "Expiry": 0
-      },
-      "RateLimitOptions": {
-        "ClientWhitelist": [],
-        "EnableRateLimiting": false,
-        "Period": null,
-        "PeriodTimespan": 0.0,
-        "Limit": 0
-      },
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": null,
-        "AllowedScopes": []
-      },
-      "HttpHandlerOptions": {
-        "AllowAutoRedirect": false,
-        "UseCookieContainer": false,
-        "UseTracing": true
-      },
-      "UseServiceDiscovery": false,
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": 5002
         }
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/values",
+      "UpstreamPathTemplate": "/api003/values",
+      "UpstreamHttpMethod": [
+        "Get"
       ],
-      "UpstreamHost": null,
-      "Key": null,
-      "DelegatingHandlers": [],
-      "Priority": 1,
-      "Timeout": 0,
-      "DangerousAcceptAnyServerCertificateValidator": false
+      "ReRouteIsCaseSensitive": false,
+      "ServiceName": "API003",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5003
+        }
+      ]
     }
   ],
   "Aggregates": [],
@@ -190,31 +59,7 @@
       "Port": 8500,
       "Type": null,
       "Token": null,
-      "ConfigurationKey": "Oceolot_A"
-    },
-    "RateLimitOptions": {
-      "ClientIdHeader": "client_id",
-      "QuotaExceededMessage": "Too Many Requests!!!",
-      "RateLimitCounterPrefix": "ocelot",
-      "DisableRateLimitHeaders": false,
-      "HttpStatusCode": 429
-    },
-    "QoSOptions": {
-      "ExceptionsAllowedBeforeBreaking": 0,
-      "DurationOfBreak": 0,
-      "TimeoutValue": 0
-    },
-    "BaseUrl": null,
-    "LoadBalancerOptions": {
-      "Type": null,
-      "Key": null,
-      "Expiry": 0
-    },
-    "DownstreamScheme": null,
-    "HttpHandlerOptions": {
-      "AllowAutoRedirect": false,
-      "UseCookieContainer": false,
-      "UseTracing": false
+      "ConfigurationKey": "Oceolot_B"
     }
   }
 }

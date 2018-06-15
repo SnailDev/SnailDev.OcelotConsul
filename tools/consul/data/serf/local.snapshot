@@ -45,3 +45,7 @@ alive: n1 192.168.2.8:8301
 event-clock: 22
 alive: n1 192.168.2.8:8301
 event-clock: 23
+alive: n1 192.168.2.8:8301
+event-clock: 1
+alive: n1 192.168.2.8:8301
+event-clock: 2
